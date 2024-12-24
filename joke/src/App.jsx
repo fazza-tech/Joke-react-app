@@ -1,24 +1,13 @@
-import Joke from "./assets/Joke"
+import Joke from "./Joke"
+import jokesData from "./jokesData"
 
 export default function App(){
+      const jokeElement = jokesData.map((joke) =>{
+        return <Joke setup={joke.setup} punchline={joke.punchline}/>
+      }) 
   return(
     <>
-      <Joke
-    
-        Punchline= "I can't wait to see her face light up when she opens it."
-      />
-      <Joke
-        Setup="How did the hacker escape the police?"
-        Punchline= "He just ransomware!"
-      />
-      <Joke
-        Setup="Why don't pirates travel on mountain roads?"
-        Punchline="Scurvy"
-      />
-      <Joke
-        Setup=" What's the best thing about Switzerland?"
-        Punchline= "I don't know, but the flag is a big plus!"
-      />
+      {jokeElement}
     </>
     
   )
